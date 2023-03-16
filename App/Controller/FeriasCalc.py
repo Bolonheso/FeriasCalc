@@ -47,7 +47,10 @@ class InfoCalcsManager:
                 self.totalDias -= int(dias)
                 self.valorTotalGasto -= float(val)
 
-            self.valorPorDia = self.valorTotalGasto / self.totalDias
+            if self.valorTotalGasto != 0 and self.totalDias != 0:
+                self.valorPorDia = self.valorTotalGasto / self.totalDias
+            else:
+                self.valorPorDia = 0
        
         elif modo == "lista":
             removedDias, removedValor = int(), float()
@@ -59,7 +62,11 @@ class InfoCalcsManager:
                 self.totalDias -= removedDias
                 self.valorTotalGasto -= removedValor
 
-            self.valorPorDia = self.valorTotalGasto / self.totalDias
+            if self.valorTotalGasto != 0 and self.totalDias != 0:
+                self.valorPorDia = self.valorTotalGasto / self.totalDias
+            else:
+                self.valorPorDia = 0
+
             return removedDias, removedValor
 
 

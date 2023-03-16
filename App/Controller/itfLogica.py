@@ -16,6 +16,9 @@ class logicaInterface:
         self.restartWinBase = False
 
         self.InfoCalcsManager = InfoCalcsManager(self.familiasList)
+    
+    def winLogin():
+        pass
 
     def winBase(self):
         #if self.win == self.windowBase and self.event == sg.WIN_CLOSED:
@@ -210,13 +213,8 @@ class logicaInterface:
                     valorBefore - float(self.partToEdit.pagou),
                     sum = False
                 )
-                
-                self.InfoCalcsManager.attValues(
-                    (int(diasBefore) - int(self.partToEdit.dias)) * -1,
-                    (float(valorBefore) - float(self.partToEdit.pagou)) * -1
-                )
 
-                self.dataManager.attValuesParts(self.InfoCalcsManager.valorPorDia, self.famToEdit)
+                self.dataManager.attValuesFamilys(self.familiasList, self.InfoCalcsManager.valorPorDia)
 
                 self.windowAddEditPart.close()
                 

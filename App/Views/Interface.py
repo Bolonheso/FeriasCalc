@@ -10,6 +10,12 @@ def frameLayoutPart():
 
     return frameLayoutPart
 
+def layoutLogin():
+    layoutLogin = [
+        [sg.Text("Selecione uma Viagem:"), sg.Combo()],
+        [sg.Input()]
+    ]
+
 def layoutBase(familiasList, ext=True):
     
     layoutBase = [
